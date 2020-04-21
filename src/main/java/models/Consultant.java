@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Loctitian extends AbstractEntity {
+public class Consultant extends AbstractEntity {
 
     @NotBlank(message = "Address required!")
     private String streetAddress;
@@ -25,7 +25,7 @@ public class Loctitian extends AbstractEntity {
     @NotBlank(message = "Phone required!")
     private Integer phone;
 
-    public Loctitian(String streetAddress, String city, Integer zip, Integer phone, USConstants usConstants) {
+    public Consultant(String streetAddress, String city, Integer zip, Integer phone, USConstants usConstants) {
         super();
         this.streetAddress=streetAddress;
         this.city=city;
@@ -70,5 +70,5 @@ public class Loctitian extends AbstractEntity {
         this.phone = phone;
     }
 
-    public Loctitian(){}
+    public Consultant(){}
 }

@@ -1,20 +1,18 @@
 package controllers;
 
-import models.data.LoctitianRepository;
+import models.data.ConsultantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
 
     @Autowired
-    private LoctitianRepository loctitianRepository;
+    private ConsultantRepository consultantRepository;
 
 //    @RequestMapping("")
 //    public String index(Model model) {
-//        model.addAttribute("title", "all loctitians");
+//        model.addAttribute("title", "all consultants");
 //        return "index";
 //    }
 
