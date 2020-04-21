@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -13,15 +14,25 @@ public class Loctitian extends AbstractEntity {
     @NotBlank(message = "City required!")
     private String city;
 
+    @ManyToOne
     @Size(min = 2, max = 2, message = "Use 2 letter standard abbreviation please!")
     @NotBlank(message = "State required!")
-    private String state;
+    private USConstants usConstants;
 
     @NotBlank(message = "Zip required!")
     private Integer zip;
 
     @NotBlank(message = "Phone required!")
     private Integer phone;
+
+    public Loctitian(String streetAddress, String city, Integer zip, Integer phone, USConstants usConstants) {
+        super();
+        this.streetAddress=streetAddress;
+        this.city=city;
+        this.zip=zip;
+        this.phone=phone;
+        this.usConstants = usConstants;
+    }
 
     public String getStreetAddress() {
         return streetAddress;
@@ -39,12 +50,8 @@ public class Loctitian extends AbstractEntity {
         this.city = city;
     }
 
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
+    public USConstants getUsConstants() {
+        return usConstants;
     }
 
     public Integer getZip() {
