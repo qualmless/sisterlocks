@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+
+<body>
+
+<table class="table table-striped">
+    <tr>
+        <th>ID: </th>
+        <td th:text="${consultant.id}"></td>
+    </tr>
+    <tr>
+        <th>Name: </th>
+        <td th:text="${consultant.name}"></td>
+    </tr>
+
+    <tr>
+        <th>Phone number: </th>
+        <td th:text="${consultant.phoneNumber}"></td>
+    </tr>
+
+    <tr>
+        <th>Email: </th>
+        <td th:text="${consultant.email}"></td>
+    </tr>
+
+    <tr>
+        <th>Salon or Home: </th>
+        <td th:text="${consultant.salonOrHome}"></td>
+    </tr>
+
+    <tr>
+        <th>Salon Name: </th>
+        <td th:text="${consultant.salonName}"></td>
+    </tr>
+
+    <tr>
+        <th>Address: </th>
+        <td th:text="${consultant.address}"></td>
+    </tr>
+
+    <tr>
+        <th>City: </th>
+        <td th:text="${consultant.city}"></td>
+    </tr>
+
+    <tr>
+        <th>State: </th>
+        <td th:text="${consultant.state}"></td>
+    </tr>
+
+    <tr>
+        <th>Zip: </th>
+        <td th:text="${consultant.zip}"></td>
+    </tr>
+
+
+<!--    <tr>-->
+<!--        <th>Description: </th>-->
+<!--        <td th:text="${event.eventDetails.description}"></td>-->
+<!--    </tr>-->
+
+<!--    <tr>-->
+<!--        <th>Contact Email: </th>-->
+<!--        <td th:text="${event.eventDetails.contactEmail}"></td>-->
+<!--    </tr>-->
+</table>
+
+</body>
+</html>

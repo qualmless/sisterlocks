@@ -20,24 +20,24 @@ public class ConsultantController {
     @Autowired
     private ConsultantRepository consultantRepository;
 
-    @GetMapping("add")
-    public String displayAddNewLoctitianForm(Model model) {
-        model.addAttribute("title","Add Consultant");
-        model.addAttribute(new Consultant());
-        return "consultants/add";
-    }
+//    @GetMapping("add")
+//    public String displayAddNewLoctitianForm(Model model) {
+//        model.addAttribute("title","Add Consultant");
+//        model.addAttribute(new Consultant());
+//        return "consultants/add";
+//    }
 
-    @PostMapping("add")
-    public String processAddNewLoctitianForm (@ModelAttribute @Valid Consultant newConsultant,
-                                              Errors errors,
-                                              Model model) {
-        if (errors.hasErrors()) {
-            model.addAttribute("title", "Add Consultant");
-            return "consultants/add";
-        }
-        consultantRepository.save(newConsultant);
-        return "redirect:";
-    }
+//    @PostMapping("add")
+//    public String processAddNewLoctitianForm (@ModelAttribute @Valid Consultant newConsultant,
+//                                              Errors errors,
+//                                              Model model) {
+//        if (errors.hasErrors()) {
+//            model.addAttribute("title", "Add Consultant");
+//            return "consultants/add";
+//        }
+//        consultantRepository.save(newConsultant);
+//        return "redirect:";
+//    }
 
     @GetMapping("")
     public String displayLoctitianIndex(Model model) {
