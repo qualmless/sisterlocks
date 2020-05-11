@@ -38,17 +38,17 @@ public class Consultant extends AbstractEntity {
         return streetAddress;
     }
 
-    public void setStreetAddress(String streetAddress) {
-        this.streetAddress = streetAddress;
-    }
+//    public void setStreetAddress(String streetAddress) {
+//        this.streetAddress = streetAddress;
+//    }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+//    public void setCity(String city) {
+//        this.city = city;
+//    }
 
     public USConstants getUsConstants() {
         return usConstants;
@@ -57,18 +57,18 @@ public class Consultant extends AbstractEntity {
     public Integer getZip() {
         return zip;
     }
-
-    public void setZip(Integer zip) {
-        this.zip = zip;
-    }
+//
+//    public void setZip(Integer zip) {
+//        this.zip = zip;
+//    }
 
     public Integer getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
-        this.phone = phone;
-    }
+//    public void setPhone(Integer phone) {
+//        this.phone = phone;
+//    }
 
     public Consultant(){}
 }

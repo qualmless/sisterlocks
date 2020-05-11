@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head th:replace="fragments :: head">
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
 <body>
-<p>
-    loctitian!
-</p>
+<header th:replace="fragments :: page-header"></header>
+
+    <p>all consultants</p>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Consultant Name</th>
+            <th>Phone Number</th>
+            <th>Salon or Home</th>
+        </tr>
+        </thead>
+        <tr th:each="consultant : ${consultants}">
+            <td th:text="${consultant.id}"></td>
+            <td><a th:href="'/consultants/details?consultantId=' + ${consultant.id}" th:text="${consultant.name}"></a></td>
+        </tr>
+    </table>
 </body>
 </html>

@@ -15,10 +15,10 @@
             <th>Salon or Home</th>
         </tr>
         </thead>
-<!--        <tr th:each="event : ${events}">-->
-<!--            <td th:text="${event.id}"></td>-->
-<!--            <td><a th:href="'/events/detail?eventId=' + ${event.id}" th:text="${event.name}"></a></td>-->
-<!--        </tr>-->
+        <tr th:each="consultant : ${consultants}">
+            <td th:text="${consultant.id}"></td>
+            <td><a th:href="'/consultants/details?consultantId=' + ${consultant.id}" th:text="${consultant.name}"></a></td>
+        </tr>
     </table>
 </body>
 </html>
