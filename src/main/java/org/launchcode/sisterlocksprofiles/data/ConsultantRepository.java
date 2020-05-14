@@ -1,6 +1,6 @@
-package models.data;
+package org.launchcode.sisterlocksprofiles.data;
 
-import models.Consultant;
+import org.launchcode.sisterlocksprofiles.models.Consultant;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import javax.transaction.Transactional;
