@@ -1,14 +1,14 @@
-package controllers;
+package org.launchcode.sisterlocksprofiles;
 
-import models.Consultant;
-import models.data.ConsultantRepository;
+import org.launchcode.sisterlocksprofiles.models.Consultant;
+import org.launchcode.sisterlocksprofiles.data.ConsultantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
@@ -25,26 +25,15 @@ public class ConsultantController {
         return "consultants/index";
     }
 
-//    @GetMapping("view/{loctitianId}")
-//    public String displayView
-
 
     @GetMapping
     public String displayAllConsultants(@RequestParam(required = false) Integer consultantId, Model model) {
 
-        if (consultantId == null) {
+//        if (consultantId == null) {
             model.addAttribute("title", "All Consultants");
             model.addAttribute("consultants", consultantRepository.findAll());
-        } else {
-//            Optional<EventCategory> result = eventCategoryRepository.findById(consultantId);
-//            if (result.isEmpty()) {
-//                model.addAttribute("title", "Invalid Category ID: " + consultantId);
-//            } else {
-//                EventCategory category = result.get();
-//                model.addAttribute("title", "Events in category: " + category.getName());
-//                model.addAttribute("events", category.getConsultants());
-//            }
-        }
+//        } else {
+//        }
         return "consultants/index";
     }
 
@@ -53,13 +42,13 @@ public class ConsultantController {
 
         Optional<Consultant> result = consultantRepository.findById(consultantId);
 
-        if (result.isEmpty()) {
-            model.addAttribute("title", "Invalid Consultant ID: " + consultantId);
-        } else {
+//        if (result.isEmpty()) {
+//            model.addAttribute("title", "Invalid Consultant ID: " + consultantId);
+//        } else {
             Consultant consultant = result.get();
             model.addAttribute("title", consultant.getName() + " Details");
             model.addAttribute("consultant", consultant);
-        }
+//        }
 
         return "consultants/detail";
     }

@@ -1,20 +1,30 @@
-package models;
+package org.launchcode.sisterlocksprofiles.models;
+
+import org.springframework.stereotype.Controller;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import javax.persistence.CascadeType;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class ConsultantDetails {
+public class ConsultantDetails extends AbstractEntity{
 
-    private String consultantName;
+    private String name;
     private String contactEmail;
     private String streetAddress;
     private String city;
     private Integer zip;
     private Integer phone;
-    private USConstants usConstants;
+//    private USConstants usConstants;
 
 
     private Consultant consultant;
@@ -22,83 +32,58 @@ public class ConsultantDetails {
     public ConsultantDetails(@Size(max = 500, message = "Description too long!") String description,
                              @NotBlank(message = "Email is required")
                              @Email(message = "Invalid email. Try again.") String contactEmail,
+                             String name,
                              String streetAddress,
                              String city,
                              Integer zip,
-                             Integer phone,
-                             USConstants usConstants) {
-        this.consultantName = description;
+                             Integer phone
+                             /*USConstants usConstants*/) {
+        this.name = description;
         this.contactEmail = contactEmail;
         this.streetAddress=streetAddress;
         this.city=city;
         this.zip=zip;
         this.phone=phone;
-        this.usConstants = usConstants;
+//        this.usConstants = usConstants;
     }
 
 
 
-    public String getConsultantName() {
-        return consultantName;
-    }
-
-    public void setConsultantName(String consultantName) {
-        this.consultantName = consultantName;
+    public String getName() {
+        return name;
     }
 
     public String getContactEmail() {
         return contactEmail;
     }
 
-    public void setContactEmail(String contactEmail) {
-        this.contactEmail = contactEmail;
-    }
-
     public String getStreetAddress() {
         return streetAddress;
-    }
-
-    public void setStreetAddress(String streetAddress) {
-        this.streetAddress = streetAddress;
     }
 
     public String getCity() {
         return city;
     }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public USConstants getUsConstants() {
-        return usConstants;
-    }
-
-    public void setUsConstants(USConstants usConstants) {
-        this.usConstants = usConstants;
-    }
+//
+//    public USConstants getUsConstants() {
+//        return usConstants;
+//    }
 
     public Integer getZip() {
         return zip;
-    }
-
-    public void setZip(Integer zip) {
-        this.zip = zip;
     }
 
     public Consultant getConsultant() {
         return consultant;
     }
 
-    public void setConsultant(Consultant consultant) {
-        this.consultant = consultant;
-    }
-
     public Integer getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
-        this.phone = phone;
+    @Override
+    public String toString() {
+        return name;
     }
+
 }
